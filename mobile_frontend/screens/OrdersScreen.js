@@ -6,8 +6,11 @@ import { Context } from '../context/AuthContext';
 import axios from 'axios';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+
 const OrdersScreen = ({navigation}) => {
   const [ orders, setOrders ] = useState(0);
+  const [ modalVisible, setModalVisible ] = useState(true);
+
    useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get('https://bestbuy-database-default-rtdb.firebaseio.com/orders.json');
@@ -24,7 +27,6 @@ const OrdersScreen = ({navigation}) => {
         data={orders}
         keyExtractor={(order) => order.id.toString()}
         renderItem={({item} ) => {
-          console.log(item)
           return (
             <TouchableOpacity
               onPress={() => navigation.navigate('OrderScreen', {item})}
@@ -39,6 +41,7 @@ const OrdersScreen = ({navigation}) => {
           );
         }}
       />
+
     </View>
   );
 };

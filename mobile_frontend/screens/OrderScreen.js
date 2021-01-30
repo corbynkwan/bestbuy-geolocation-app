@@ -1,6 +1,6 @@
 import React, { useContext,useState,useEffect } from 'react';
-import { Platform,View, StyleSheet, Text ,FlatList,TouchableOpacity} from 'react-native';
-import { Button, Overlay} from 'react-native-elements';
+import { Platform,View, StyleSheet ,FlatList,TouchableOpacity} from 'react-native';
+import { Button, Overlay,Text,Input} from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import AuthForm from '../components/AuthForm';
 import NavLink from '../components/NavLink';
@@ -16,31 +16,44 @@ const OrderScreen = ({ route, navigation }) => {
   const [errorMsg, setErrorMsg] = useState(null);
   const [latitude, setLatitude] = useState(null);
   const [longitude, setLongitude] = useState(null);
-  const [overlayVisibile, setOverlayVisible] = useState(false);
-
+  const [distance, setDistance] = useState(null);
+  const [duration, setDuration] = useState(null);
+  const [parkingLot, setParkingLot] = useState(null);
+  const [description, setDescription] = useState(null);
     const { item } = route.params;
+    const [ startTracking,setStartTracking ] = useState(false);
+
     const calculateTime = () => { 
-  
+      
     }
-    const toggleOverlay = () => {
-      setOverlayVisible(!overlayVisibile);
-    };
+
     useEffect(() => {
       console.log('hi')
       const _getLocationAsync = async () => {
         let { status } = await Location.requestPermissionsAsync();
         let location = await Location.watchPositionAsync(
-          {accuracy:Location.Accuracy.High,distanceInterval :5},
+          {accuracy:Location.Accuracy.High,distanceInterval :10000},
           (loc) => {
-            console.log(loc)
             setLatitude(loc.coords.latitude)
             setLongitude(loc.coords.longitude)
           }
         );
          
       }
+      if(startTracking) {
       _getLocationAsync()
-  }, [])
+      }
+  }, [startTracking])
+  useEffect(() => {
+    
+    const calculateDistance = async () => {
+      if(longitude !=undefined && longitude !=null && latitude !=undefined && latitude !=null && item.location!=undefined && item.items!=undefined && item.id!=undefined){
+        console.log({latitude,longitude,location:item.location,items:item.items,id:item.id})
+      await axios.post(`http://1bb1f959b0e1.ngrok.io/calculate`,{latitude,longitude:longitude,location:item.location,id:item.id,items:item.items});
+      }
+    }
+    calculateDistance();
+ }, [latitude,longitude]);
   
     let locationText = 'Waiting..';
     if (errorMsg) {
@@ -50,17 +63,56 @@ const OrderScreen = ({ route, navigation }) => {
     }
   return (
     <View>
-      <Text>{item.id}</Text>
-      <Text>{item.items}</Text>
-      <Text>{item.location}</Text>
+      <Text h4>{item.id}</Text>
+      <Text h4>{item.items}</Text>
+      <Text h4>{item.location}</Text>
       <Button
-  title="Ready to Pickup!"
-  onPress={() => calculateTime()}
+  title="On My Way!"
+  onPress={() => setStartTracking(true)
+  
+   }
 />
-<Text>{`${latitude}, ${longitude}`}</Text>
-<Overlay isVisible={overlayVisibile} onBackdropPress={toggleOverlay}>
-        <Text>Hello from Overlay!</Text>
-      </Overlay>
+
+<Text h1>Or enter how long it will take you to arrive here!</Text>
+<Input
+   placeholder="Number"
+
+   onChangeText={value => setDuration(value)}
+  />
+
+<Button
+  title="I'm coming over!"
+  onPress={async() => {
+    console.log({minutes: parseInt(duration),location:item.location,id:item.id,items:item.items})
+    await axios.post(`http://1bb1f959b0e1.ngrok.io/sendEmail`,{mins: parseInt(duration),location:item.location,id:item.id,items:item.items});
+  }
+  
+   }
+   
+/>
+<Text h1>Tell us what parking lot you are in!</Text>
+<Input
+   placeholder="Parking Lot Number"
+   onChangeText={value => setParkingLot(value)}
+  />
+  <Text h1>Tell us a description of your car (optional)</Text>
+  <Input
+   placeholder="Parking Lot Number"
+   onChangeText={value => setDescription(value)}
+  />
+  <Button
+  title="I'm Here!"
+  onPress={async() => {
+    console.log({id:item.id,parkingLot,description})
+    await axios.post(`http://1bb1f959b0e1.ngrok.io/sendParkingInfo`,{id:item.id,parkingLot,description});
+  }
+  
+   }
+   
+/>
+
+<Text h1>{`${latitude}, ${longitude}`}</Text>
+
     </View>
 
   );
