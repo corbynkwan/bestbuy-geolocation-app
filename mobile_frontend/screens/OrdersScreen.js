@@ -1,42 +1,65 @@
 import React, { useContext,useState,useEffect } from 'react';
-import { View, StyleSheet, Text } from 'react-native';
+import { View, StyleSheet, Text ,FlatList,TouchableOpacity} from 'react-native';
 import AuthForm from '../components/AuthForm';
 import NavLink from '../components/NavLink';
 import { Context } from '../context/AuthContext';
 import axios from 'axios';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+const OrdersScreen = ({navigation}) => {
+  const [ orders, setOrders ] = useState(0);
+   useEffect(() => {
+    const fetchData = async () => {
+      const response = await axios.get('https://bestbuy-database-default-rtdb.firebaseio.com/orders.json');
+      setOrders(response.data)
 
-const SigninScreen = () => {
-  const { orders, setOrders } = useState({something:5});
-    useEffect(() => {
-      axios.get('https://bestbuy-database-default-rtdb.firebaseio.com/orders.json')
-      .then(res => {
-        console.log("got it")
-        const orders = res.data;
-        setOrders(orders)
-      })
-      .catch( error => {
-        console.log(error)
-    } );
+  
+    }
+    fetchData()
   },[]);
 
   return (
-    <View style={styles.container}>
-      <Text></Text>
+    <View>
+      <FlatList
+        data={orders}
+        keyExtractor={(order) => order.id.toString()}
+        renderItem={({item} ) => {
+          console.log(item)
+          return (
+            <TouchableOpacity
+              onPress={() => navigation.navigate('OrderScreen', {item})}
+            >
+              <View style={styles.row}>
+                <Text style={styles.title}>
+                 Order {item.id} 
+                                  </Text>
 
+              </View>
+            </TouchableOpacity>
+          );
+        }}
+      />
     </View>
   );
 };
 
-SigninScreen.navigationOptions = {
-  header: () => false,
-};
+
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    marginBottom: 250,
+  row: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingVertical: 20,
+    paddingHorizontal: 10,
+    borderTopWidth: 1,
+    borderColor: 'gray',
+  },
+  title: {
+    fontSize: 18,
+  },
+  icon: {
+    fontSize: 24,
   },
 });
 
-export default SigninScreen;
+export default OrdersScreen;
