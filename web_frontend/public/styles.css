@@ -1,0 +1,32 @@
+p {
+	font-family: Arial;
+}
+b {
+	font-family: Arial;
+}
+h2 {
+	font-family: Arial;
+}
+h4 {
+	font-family: Arial;
+}
+table {
+	border: 1px solid black;
+	width: 75%;
+	margin-left: auto;
+  	margin-right: auto;
+}
+.table1 {
+	border: 1px solid black;
+	width: 65%;
+	text-align: left;
+	margin-left: auto;
+ 	margin-right: auto;
+ 	padding: 25px;
+}
+.table2 {
+	border: 2px solid #eeeeee;
+	width: 75%;
+	text-align: center;
+  	background-color: white;
+}
