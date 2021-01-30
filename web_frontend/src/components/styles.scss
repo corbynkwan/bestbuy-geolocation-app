@@ -91,12 +91,52 @@ $bg-tint: #F4F6F9;
 		}
 	}
 
-	.time-selection {
+	.time-and-date {
 		text-align: left;
 
 		background-color: $bg-tint;
 		padding: 16px 12px;
 		margin-top: 40px;
+	}
+
+	.time-selection {
+		display: flex;
+		flex-direction: row;
+		align-items: flex-start;
+	}
+
+	.time-selection-column {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.time-selection-heading {
+		text-align: center;
+		background-color: #fff;
+		padding: 2px 8px;
+		margin-bottom: 2px;
+
+		font-weight: 600;
+		text-align: center;
+	}
+
+	.time {
+		text-align: center;
+		background-color: #fff;
+		padding: 2px 8px;
+		margin-bottom: 2px;
+
+		border: 1px solid white;
+	}
+
+	.time-slot {
+		text-align: center;
+		background-color: #fff;
+		padding: 2px 8px;
+		margin-bottom: 2px;
+
+		border: 1px solid $bb-blue;
+		// border-radius: 2px;
 	}
 
 	button {

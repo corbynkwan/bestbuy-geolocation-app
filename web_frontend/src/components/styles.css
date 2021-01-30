@@ -88,11 +88,59 @@
   margin-bottom: 30px;
 }
 
-#page-pickup .time-selection {
+#page-pickup .time-and-date {
   text-align: left;
   background-color: #F4F6F9;
   padding: 16px 12px;
   margin-top: 40px;
+}
+
+#page-pickup .time-selection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+#page-pickup .time-selection-column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#page-pickup .time-selection-heading {
+  text-align: center;
+  background-color: #fff;
+  padding: 2px 8px;
+  margin-bottom: 2px;
+  font-weight: 600;
+  text-align: center;
+}
+
+#page-pickup .time {
+  text-align: center;
+  background-color: #fff;
+  padding: 2px 8px;
+  margin-bottom: 2px;
+  border: 1px solid white;
+}
+
+#page-pickup .time-slot {
+  text-align: center;
+  background-color: #fff;
+  padding: 2px 8px;
+  margin-bottom: 2px;
+  border: 1px solid #0A4ABF;
 }
 
 #page-pickup button {

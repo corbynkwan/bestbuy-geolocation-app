@@ -2,6 +2,110 @@ import React from "react";
 import "./styles.css";
 // import "./Pickup.css";
 
+const timeDataOld = [
+    {
+        "id":   "0",
+        "num":  "6",
+    },
+    {
+        "id":   "1",
+        "num":  "2",
+    },
+    
+    {
+        "id":   "3",
+        "num":  "0",
+    },
+
+]
+
+const timeData = [
+    [
+        "Sat, Jan 30",
+        1,
+        2,
+        6,
+        4,
+        1,
+        10,
+        3,
+        9
+    ],
+    [
+        "Sun, Jan 31",
+        6,
+        10,
+        10,
+        1,
+        4,
+        2,
+        7,
+        8
+    ],
+    [
+        "Mon, Feb 1",
+        0,
+        4,
+        6,
+        0,
+        0,
+        4,
+        10,
+        5
+    ]
+]
+
+const listOfTimes = [
+    "11:00 – 12:00",
+    "12:00 – 1:00 PM",
+    "1:00 – 2:00 PM",
+    "2:00 – 3:00 PM",
+    "3:00 – 4:00 PM",
+    "4:00 – 5:00 PM",
+    "5:00 – 6:00 PM",
+    "6:00 – 7:00 PM"
+]
+
+// function renderTimeData {
+// const renderTimeData = timeData.map(function(day){
+
+//     if (day.length !== listOfTimes.length+1) return; 
+//     let date = listOfTimes[0];
+//     for (let i = 1; i <= listOfTimes.length; i++) {
+        
+//     }
+
+//     console.log("begin test2")
+
+//     return  <div className="time-selection-column">
+//                 {timeSlots(day,listOfTimes.length)}
+//             </div>
+// });
+// }
+
+const renderTimeData = listOfTimes.map(function(){
+    let rand = Math.floor(Math.random() * 11);
+    return <div className="time-slot">Free {rand}/10</div>
+});
+
+function timeSlots(day,numOfSlots) {
+    console.log("begin test3")
+    for (let i = 0; i < numOfSlots; i++) {
+        timeSlot(day,i);
+    }
+}
+
+function timeSlot(day,i) {
+    console.log("begin test4")
+    return <button className="time-slot">Hello, {day[i]}</button>;
+}
+
+
+
+const renderTimes = listOfTimes.map((listOfTimes) =>
+    <div className="time">{listOfTimes}</div>
+)
+
 function demoButton() {
     console.log("begin test1")
     const Http = new XMLHttpRequest();
@@ -10,6 +114,8 @@ function demoButton() {
     Http.send();
     console.log("end test1")
 }
+
+
 
 function Pickup() {
   return (
@@ -25,65 +131,27 @@ function Pickup() {
             <p>Schedule a pickup to speedup the process by letting us know ahead of time when you will be arriving. Our Blue Shirts will prepare for your arrival and be ready to drop off your order faster than ever. 3 hours before your schedule pickup, an email with more instructions will be sent.</p>
             <p>Alternatively you can still follow anytime pickup steps and text us when you arrive in the designated pickup area.</p>
 
-            <div class="menu">
-                <div class="time-selection">
+            <div className="menu">
+                <div className="time-and-date">
                     <h2>Select a time slot</h2>
-                    <table className = "table2">
-                        <tr>
-                            <th>Time/Date</th>
-                            <th>Sat, Jan 30</th>
-                            <th>Sun, Jan 31</th>
-                            <th>Mon, Feb 1</th>
-                        </tr>
-                        <tr>
-                            <td>11:00 - 12:00</td>
-                            <td>asdffdas</td>
-                            <td>asdfdfas</td>
-                            <td>asedffda</td>
-                        </tr>
-                        <tr>
-                            <td>12:00 - 1:00</td>
-                            <td>asdffdas</td>
-                            <td>asdfdfas</td>
-                            <td>asedffda</td>
-                        </tr>
-                        <tr>
-                            <td>1:00 - 2:00</td>
-                            <td>asdffdas</td>
-                            <td>asdfdfas</td>
-                            <td>asedffda</td>
-                        </tr>
-                        <tr>
-                            <td>2:00 - 3:00</td>
-                            <td>asdffdas</td>
-                            <td>asdfdfas</td>
-                            <td>asedffda</td>
-                        </tr>
-                        <tr>
-                            <td>3:00 - 4:00</td>
-                            <td>asdffdas</td>
-                            <td>asdfdfas</td>
-                            <td>asedffda</td>
-                        </tr>
-                        <tr>
-                            <td>4:00 - 5:00</td>
-                            <td>asdffdas</td>
-                            <td>asdfdfas</td>
-                            <td>asedffda</td>
-                        </tr>
-                        <tr>
-                            <td>5:00 - 6:00</td>
-                            <td>asdffdas</td>
-                            <td>asdfdfas</td>
-                            <td>asedffda</td>
-                        </tr>
-                        <tr>
-                            <td>6:00 - 7:00</td>
-                            <td>asdffdas</td>
-                            <td>asdfdfas</td>
-                            <td>asedffda</td>
-                        </tr>
-                    </table>
+                    <div className="time-selection">
+                        <div className="time-selection-column">
+                            <div className="time-selection-heading">Time/Date</div>
+                            {renderTimes}
+                        </div>
+                        <div className="time-selection-column">
+                            <div className="time-selection-heading">Sat, Jan 30</div>
+                            {renderTimeData}
+                        </div>
+                        <div className="time-selection-column">
+                            <div className="time-selection-heading">Sun, Jan 31</div>
+                            {renderTimeData}
+                        </div>
+                        <div className="time-selection-column">
+                            <div className="time-selection-heading">Mon, Feb 1</div>
+                            {renderTimeData}
+                        </div>
+                    </div>
                 </div>
             
                 <button id="demo" onClick={demoButton} className = "submit">SUBMIT</button>
