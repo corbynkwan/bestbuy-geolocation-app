@@ -14,7 +14,9 @@ table {
 	border: 1px solid black;
 	width: 75%;
 	margin-left: auto;
-  	margin-right: auto;
+	margin-right: auto;
+	
+	background: none;
 }
 .table1 {
 	border: 1px solid black;
@@ -30,3 +32,29 @@ table {
 	text-align: center;
   	background-color: white;
 }
+
+html {
+	font-family: Arial, sans-serif;
+}
+
+body {
+	font-family: Arial, sans-serif;
+}
+
+.h1 {
+	font-size: 24px;
+	line-height: 26px;
+	font-weight: 700;
+}
+
+
+.container {
+	padding: 30px;
+	border: 1px solid black;
+}
+
+.time-selection {
+	background-color: #F4F6F9;
+	padding: 16px 12px;
+}
+

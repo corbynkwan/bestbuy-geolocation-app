@@ -1,6 +1,6 @@
 import React from "react";
-import "./Store.css";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "./styles.css";
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import Table from 'react-bootstrap/Table'
 
 var Columns = [
@@ -25,7 +25,7 @@ var Columns = [
   
 function Store() {
   return (
-    <body>
+    <body id="page-store">
       <Table striped bordered hover>
         <thead>
           <tr>

@@ -1,0 +1,110 @@
+@import url(c:\Users\scott\OneDrive\Documents\GitHub\bestbuy-geolocation-app\web_frontend\node_modules\bootstrap\dist\css\bootstrap.min.css);
+#page-pickup p {
+  font-family: Arial;
+  line-height: 1.15em;
+}
+
+#page-pickup b {
+  font-family: Arial;
+}
+
+#page-pickup h2 {
+  font-family: Arial;
+}
+
+#page-pickup h4 {
+  font-family: Arial;
+}
+
+#page-pickup table {
+  border: 1px solid black;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  background: none;
+}
+
+#page-pickup .table1 {
+  border: 1px solid black;
+  width: 65%;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 25px;
+}
+
+#page-pickup .table2 {
+  border: 2px solid #eeeeee;
+  width: 75%;
+  text-align: center;
+  background-color: white;
+}
+
+#page-pickup html {
+  font-family: Arial, sans-serif;
+}
+
+#page-pickup body {
+  font-family: Arial, sans-serif;
+  background-color: #E5E5E5;
+}
+
+#page-pickup h1 {
+  font-size: 24px;
+  line-height: 6px;
+  font-weight: 700;
+}
+
+#page-pickup h2 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#page-pickup .container {
+  padding: 30px;
+  border: 1px solid black;
+}
+
+#page-pickup #main {
+  margin-top: 30px;
+}
+
+#page-pickup #footer {
+  background-color: #F4F6F9;
+  margin-bottom: 30px;
+  border-top: none;
+}
+
+#page-pickup #footer p:last-child {
+  margin-bottom: 0;
+}
+
+#page-pickup .menu {
+  text-align: center;
+}
+
+#page-pickup .menu #demo {
+  margin-top: 25px;
+  margin-bottom: 30px;
+}
+
+#page-pickup .time-selection {
+  text-align: left;
+  background-color: #F4F6F9;
+  padding: 16px 12px;
+  margin-top: 40px;
+}
+
+#page-pickup button {
+  background-color: #0A4ABF;
+  padding: 12px 70px;
+  border: none;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 14px;
+}
+
+#page-pickup #store-name {
+  color: #0A4ABF;
+}
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,120 @@
+@import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+$bb-blue: #0A4ABF;
+$bb-yellow: #FFED31;
+$bg-default: #E5E5E5;
+$bg-tint: #F4F6F9;
+
+
+#page-pickup {
+	p {
+		font-family: Arial;
+		line-height: 1.15em;
+	}
+	b {
+		font-family: Arial;
+	}
+	h2 {
+		font-family: Arial;
+	}
+	h4 {
+		font-family: Arial;
+	}
+	table {
+		border: 1px solid black;
+		width: 75%;
+		margin-left: auto;
+		margin-right: auto;
+		
+		background: none;
+	}
+	.table1 {
+		border: 1px solid black;
+		width: 65%;
+		text-align: left;
+		margin-left: auto;
+		margin-right: auto;
+		padding: 25px;
+	}
+	.table2 {
+		border: 2px solid #eeeeee;
+		width: 75%;
+		text-align: center;
+		background-color: white;
+	}
+
+	html {
+		font-family: Arial, sans-serif;
+	}
+
+	body {
+		font-family: Arial, sans-serif;
+		background-color: $bg-default;
+	}
+
+	h1 {
+		font-size: 24px;
+		line-height: 6px;
+		font-weight: 700;
+	}
+
+	h2 {
+		font-size: 18px;
+		font-weight: bold;
+	}
+
+	.container {
+		padding: 30px;
+		border: 1px solid black;
+	}
+
+	#main {
+		margin-top: 30px;
+	}
+
+	#footer {
+		background-color: $bg-tint;
+		margin-bottom: 30px;
+		border-top: none;
+
+		p:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	.menu {
+		text-align: center;
+
+		#demo {
+			margin-top: 25px;
+			margin-bottom: 30px;
+		}
+	}
+
+	.time-selection {
+		text-align: left;
+
+		background-color: $bg-tint;
+		padding: 16px 12px;
+		margin-top: 40px;
+	}
+
+	button {
+		background-color: $bb-blue;
+		padding: 12px 70px;
+		border: none;
+		border-radius: 2px;
+		
+		color: #fff;
+		font-size: 14px;
+	}
+
+	#store-name {
+		color: $bb-blue;
+	}
+
+}
+
+#page-store {
+	
+}
