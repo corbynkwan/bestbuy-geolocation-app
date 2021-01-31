@@ -66,6 +66,78 @@ const listOfTimes = [
     "6:00 – 7:00 PM"
 ]
 
+const jan30 = [3,2,0,4,9,6,0,0]
+const jan31 = [5,3,2,7,9,4,2,1]
+const feb01 = [9,10,0,5,4,0,1,3]
+
+function clicked() {
+    console.log("test9");
+}
+
+var render1 = jan30.map(function(d){
+    let string = "";
+    let addClass = "time-slot";
+
+    switch(d) {
+        case 0:
+            string = "Free"
+            break;
+        case 10:
+            string = "Slot Full " + d + "/10";
+            addClass += " time-slot-full"
+            break;
+        case 3:
+            string = "Free " + d + "/10";
+            addClass += " booked"
+            break;
+        default:
+            string = "Free " + d + "/10";
+            break;
+    }
+
+    return <div className={addClass} onClick={clicked}>{string}</div>
+})
+
+const render2 = jan31.map(function(d){
+    let string = "";
+    let addClass = "time-slot";
+
+    switch(d) {
+        case 0:
+            string = "Free"
+            break;
+        case 10:
+            string = "Slot Full " + d + "/10";
+            addClass += " time-slot-full"
+            break;
+        default:
+            string = "Free " + d + "/10";
+            break;
+    }
+
+    return <div className={addClass}>{string}</div>
+})
+
+const render3 = feb01.map(function(d){
+    let string = "";
+    let addClass = "time-slot";
+
+    switch(d) {
+        case 0:
+            string = "Free"
+            break;
+        case 10:
+            string = "Slot Full " + d + "/10";
+            addClass += " time-slot-full"
+            break;
+        default:
+            string = "Free " + d + "/10";
+            break;
+    }
+
+    return <div className={addClass}>{string}</div>
+})
+
 // function renderTimeData {
 // const renderTimeData = timeData.map(function(day){
 
@@ -83,9 +155,28 @@ const listOfTimes = [
 // });
 // }
 
+
 const renderTimeData = listOfTimes.map(function(){
-    let rand = Math.floor(Math.random() * 11);
-    return <div className="time-slot">Free {rand}/10</div>
+    // let rand = Math.floor(Math.random() * 11);
+    // let rand = s=>()=>(s=Math.imul(741103597,s)>>>0)/2**32;
+    let rand = Math.floor(Math.random()*11);
+    let string = "";
+    let addClass = "time-slot";
+
+    switch(rand) {
+        case 0:
+            string = "Free"
+            break;
+        case 10:
+            string = "Slot Full " + rand + "/10";
+            addClass += " time-slot-full"
+            break;
+        default:
+            string = "Free " + rand + "/10";
+            break;
+    }
+
+    return <div className={addClass}>{string}</div>
 });
 
 function timeSlots(day,numOfSlots) {
@@ -141,15 +232,15 @@ function Pickup() {
                         </div>
                         <div className="time-selection-column">
                             <div className="time-selection-heading">Sat, Jan 30</div>
-                            {renderTimeData}
+                            {render1}
                         </div>
                         <div className="time-selection-column">
                             <div className="time-selection-heading">Sun, Jan 31</div>
-                            {renderTimeData}
+                            {render2}
                         </div>
                         <div className="time-selection-column">
                             <div className="time-selection-heading">Mon, Feb 1</div>
-                            {renderTimeData}
+                            {render3}
                         </div>
                     </div>
                 </div>

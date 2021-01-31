@@ -116,6 +116,8 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  min-width: 150px;
+  margin-right: 2px;
 }
 
 #page-pickup .time-selection-heading {
@@ -141,6 +143,30 @@
   padding: 2px 8px;
   margin-bottom: 2px;
   border: 1px solid #0A4ABF;
+  -webkit-user-select: none;
+  /* Safari */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* IE10+/Edge */
+  user-select: none;
+  /* Standard */
+}
+
+#page-pickup .time-slot:hover:not(.time-slot-full) {
+  cursor: pointer;
+  color: #fff;
+  background-color: #0A4ABF;
+}
+
+#page-pickup .time-slot:active:not(.time-slot-full) {
+  cursor: pointer;
+}
+
+#page-pickup .time-slot-full {
+  background-color: #AAAAAA;
+  border-color: #AAAAAA;
+  color: #313131;
 }
 
 #page-pickup button {

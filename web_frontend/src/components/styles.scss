@@ -108,6 +108,9 @@ $bg-tint: #F4F6F9;
 	.time-selection-column {
 		display: flex;
 		flex-direction: column;
+
+		min-width: 150px;
+		margin-right: 2px;
 	}
 
 	.time-selection-heading {
@@ -137,6 +140,28 @@ $bg-tint: #F4F6F9;
 
 		border: 1px solid $bb-blue;
 		// border-radius: 2px;
+
+		-webkit-user-select: none; /* Safari */        
+		-moz-user-select: none; /* Firefox */
+		-ms-user-select: none; /* IE10+/Edge */
+		user-select: none; /* Standard */
+
+		&:hover:not(.time-slot-full) {
+			cursor: pointer;
+			color: #fff;
+			background-color: $bb-blue;
+		}
+		&:active:not(.time-slot-full) {
+			cursor: pointer;
+			// background-color: color.adjust($bb-blue, 50);
+		}
+	}
+	
+
+	.time-slot-full {
+		background-color: #AAAAAA;
+		border-color: #AAAAAA;
+		color: #313131;
 	}
 
 	button {
@@ -155,6 +180,6 @@ $bg-tint: #F4F6F9;
 
 }
 
-#page-store {
+// #page-store {
 	
-}
+// }
