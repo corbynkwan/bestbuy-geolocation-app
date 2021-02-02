@@ -1,6 +1,6 @@
 # BestBuy Geolocation Web and Mobile App
 
-![Project Image](mobile_frontend\assets\bestbuylogo.PNG)
+![Project Image](mobile_frontend\assets\bestbuylogo.png)
 
 
 ---
@@ -19,7 +19,7 @@
 
 A project that won **1st Place** in **BizHacks2021**! The hackathon's theme was to fix business problems that Best Buy had using technology. We aimed to fix 2 problems: 
 
-1. Customers need to wait a long time for curbside pickup, inconsistent wait times
+1. Customers needed to wait a long time for curbside pickup, inconsistent wait times
 2. Staff are shorthanded due to surges of customer pickups, causing increased wait times
 
 To fix these problems our web and mobile app presented 2 solutions: 
@@ -37,9 +37,9 @@ To fix these problems our web and mobile app presented 2 solutions:
 
 ---
 ## Demo
-<img src="mobile_frontend\assets\app1.PNG" alt="drawing" width="250"/>
-<img src="mobile_frontend\assets\app2.PNG" alt="drawing" width="250"/>
-<img src="mobile_frontend\assets\app3.PNG" alt="drawing" width="250"/>
+<img src="mobile_frontend\assets\app1.png" alt="drawing" width="250"/>
+<img src="mobile_frontend\assets\app2.png" alt="drawing" width="250"/>
+<img src="mobile_frontend\assets\app3.png" alt="drawing" width="250"/>
 
 
 
