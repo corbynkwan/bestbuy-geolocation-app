@@ -33,7 +33,7 @@ const OrdersScreen = ({navigation}) => {
             >
               <View style={styles.row}>
                 <Text style={styles.title}>
-                 Order {item.id} 
+                 Order {item.id+1} 
                                   </Text>
 
               </View>

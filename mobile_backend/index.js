@@ -4,14 +4,15 @@ const bodyParser = require('body-parser');
 
 const axios = require("axios");
 const sendGrid = require('@sendgrid/mail');
-sendGrid.setApiKey();
+require('dotenv').config();
+sendGrid.setApiKey(process.env.SENDGRID_API_KEY);
 
 
 
 const app = express();
 app.use(bodyParser.json());
 
-require('dotenv').config();
+
 
 
 app.use(cors());
@@ -85,7 +86,7 @@ app.post("/calculate", async (req, res) => {
     console.log({latitude,longitude})
     await axios({
     method: 'get',
-    url: `https://maps.googleapis.com/maps/api/directions/json?origin=${latitude},${longitude}&destination=best%20buy%20${location}&key=`
+    url: `https://maps.googleapis.com/maps/api/directions/json?origin=${latitude},${longitude}&destination=best%20buy%20${location}&key=${process.env.GOOGLE_API_KEY}}`
   })
     .then(async function (response) {
       if(sendMail){
@@ -94,8 +95,8 @@ app.post("/calculate", async (req, res) => {
       console.log(mins+ " mins away");
       if(mins < 15) {
         const msg = {
-            to: 'bsitu@sfu.ca',
-            from: "bsitu@sfu.ca",
+            to: 'corbynkwan@gmail.com',
+            from: "corbynkwan@gmail.com",
             subject: `Customer ${id} is coming to ${location} in ${mins} minutes to buy ${items}!`,
             text: `I'm coming in ${mins} minutes!`
         }
