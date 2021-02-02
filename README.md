@@ -1,6 +1,6 @@
 # BestBuy Geolocation Web and Mobile App
 
-![Project Image](mobile_frontend\assets\bestbuylogo.PNG)
+![Project Image](mobile_frontend\assets\bestbuylogo.png)
 
 
 ---
@@ -15,7 +15,7 @@
 
 ## Description
 
-A project that won **1st Place** in **BizHacks2021**! The hackathon's theme was to fix business problems that Best Buy had using technology. We aimed to fix 2 problems: 
+A project that won 🏆**1st Place** in **BizHacks2021**! The hackathon's theme was to fix business problems that Best Buy had using technology. We aimed to fix 2 problems: 
 
 1. Customers needed to wait a long time for curbside pickup, inconsistent wait times
 2. Staff are shorthanded due to surges of customer pickups, causing increased wait times
