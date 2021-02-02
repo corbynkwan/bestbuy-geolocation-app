@@ -1,7 +1,6 @@
 # BestBuy Geolocation Web and Mobile App
 
-![Project Image](mobile_frontend\assets\bestbuylogo.png)
-
+![Project Image](.\mobile_frontend\assets\bestbuylogo.png)
 
 ---
 
