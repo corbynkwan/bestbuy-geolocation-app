@@ -8,9 +8,7 @@
 ### Table of Contents
 
 - [Description](#description)
-- [Changes That Were Made](#changes-that-were-made)
-- [How To Use](#how-to-use)
-
+- [Demo](#Demo)
 - [My Information](#My-Information)
 
 ---
@@ -50,11 +48,11 @@ To fix these problems our web and mobile app presented 2 solutions:
 
 
 ## My Information
-<div>
+
 [<img align="left" alt="corbynkwan" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />](https://www.corbynkwan.com) 
 [<img align="left" alt="corbynkwan | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />](https://www.linkedin.com/in/corbyn-kwan)
  [<img align="left" alt="corbynkwan | Github" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/github.svg" />](https://github.com/corbynkwan)
-</div>
+
 
 
 
