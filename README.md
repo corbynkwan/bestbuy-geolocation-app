@@ -1,6 +1,6 @@
 # BestBuy Geolocation Web and Mobile App
 
-![Project Image](mobile_frontend\assets\bestbuylogo.png)
+![Project Image](mobile_frontend\assets\bestbuylogo.PNG)
 
 
 ---
@@ -37,9 +37,7 @@ To fix these problems our web and mobile app presented 2 solutions:
 
 ---
 ## Demo
-<img src="mobile_frontend\assets\app1.png" alt="drawing" width="250"/>
-<img src="mobile_frontend\assets\app2.png" alt="drawing" width="250"/>
-<img src="mobile_frontend\assets\app3.png" alt="drawing" width="250"/>
+<img src="mobile_frontend\assets\app1.png" alt="drawing" width="300"/> <img src="mobile_frontend\assets\app2.png" alt="drawing" width="300"/><img src="mobile_frontend\assets\app3.png" alt="drawing" width="300"/>
 
 
 
@@ -52,10 +50,11 @@ To fix these problems our web and mobile app presented 2 solutions:
 
 
 ## My Information
+<div>
 [<img align="left" alt="corbynkwan" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />](https://www.corbynkwan.com) 
- [<img align="left" alt="corbynkwan | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />](https://www.linkedin.com/in/corbyn-kwan)
+[<img align="left" alt="corbynkwan | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />](https://www.linkedin.com/in/corbyn-kwan)
  [<img align="left" alt="corbynkwan | Github" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/github.svg" />](https://github.com/corbynkwan)
-
+</div>
 
 
 
